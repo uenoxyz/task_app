@@ -1,0 +1,41 @@
+<div class="main-container">
+  <div class="info">
+    <h2>スケジュール編集</h2>
+    <% @post.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+
+  <%= form_tag("/posts/#{@post.id}/update") do %>
+    <table>
+      <tr>
+        <th><label for="title">タイトル</label></th>
+          <td><input type="text" name="title" value="<%= @post.title %>"></td>
+      </tr>
+      <tr>
+          <th><label for="start_day">開始日</label></th>
+          <td><input type="date" name="start_day" value="<%= @post.start_day %>"></td>
+        </tr>
+        <tr>
+          <th><label for="end_day">終了日</label></th>
+          <td><input type="date" name="end_day" value="<%= @post.end_day %>"></td>
+        </tr>
+        <tr>
+          <th><label for="all_day">終日</label></th>
+          <td>
+            <input type="hidden" name="all_day" value="false">
+            <input type="checkbox" name="all_day" <%= "checked" if @post.all_day %>>終日の場合はチェックを入れます
+          </td>
+        </tr>
+        <tr>
+          <th><label for="memo">スケジュールメモ</label></th>
+          <td><textarea class="posts-memo" name="memo"><%= @post.memo %></textarea></td>
+        </tr>
+    </table>
+
+    <ul>
+      <li><%= button_to("スケジュールの編集を完了する", action: "update") %></li>
+      <li><%= link_to("スケジュール一覧に戻る", posts_path) %></li>
+    </ul>
+  <% end %>
+</div>
