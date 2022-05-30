@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="info"><h2>スケジュール詳細</h2></div>
+
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <td><%= @post.title %></td>
+    </tr>
+    <tr>
+      <th>開始日</th>
+      <td><%= @post.start_day %></td>
+    </tr>
+    <tr>
+      <th>終了日</th>
+      <td><%= @post.end_day %></td>
+    </tr>
+    <tr>
+      <th>終日</th>
+      <td><strong><%= "○" if @post.start_day %></strong></td>
+    </tr>
+    <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @post.memo %></td>
+    </tr>
+  </table>
+
+  <ul>
+    <li><%= link_to("スケジュール一覧に戻る", posts_path) %></li>
+    <li><%= link_to("スケジュールを編集する", "/posts/#{@post.id}/edit") %></li>
+    <li><%= link_to("スケジュールを削除", "/posts/#{@post.id}/destroy", action: "destroy", data: {confirm: "本当に削除しますか？"}) %></li>
+  </ul>
+</div>

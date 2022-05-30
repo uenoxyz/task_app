@@ -1,15 +1,87 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4, h5, h6, form, select {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+input {
+  outline-width: 0;
+}
+
+body {
+  padding: 100px 0px;
+}
+
+header, footer {
+  position: fixed;
+  width: 100%;
+  background-color: aquamarine;
+  min-height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+header {
+  top: 0px;
+  text-align: center;
+  line-height: 100px;
+}
+
+footer {
+  bottom: 0px;
+}
+
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.main-container {
+  margin: 50px 15px;
+}
+
+.flash {
+  display: block;
+  text-align: center;
+  border: 1px solid greenyellow;
+  padding: 15px;
+  margin-bottom: 12px;
+  background-color: rgb(194, 236, 130);
+}
+
+table {
+  margin-bottom: 30px;
+}
+li {
+  padding-top: 20px;
+}
+input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+h2 {
+  padding-bottom: 20px;
+}
+p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table th {
+  background-color: rgb(134, 242, 244);
+}
